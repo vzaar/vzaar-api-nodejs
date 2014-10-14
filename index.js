@@ -1,0 +1,1 @@
+Vzaar = require("./lib/vzaar");

@@ -2,7 +2,7 @@
   "name": "vzaar-api-nodejs",
   "version": "0.0.1",
   "description": "vzaar client for node.js",
-  "main": "index.js",
+  "main": "./lib/vzaar.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
