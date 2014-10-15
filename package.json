@@ -24,5 +24,9 @@
 
   "dependencies": {
     "oauth": "0.9.11"
+  },
+
+  "devDependencies": {
+    "mocha": "*"
   }
 }
