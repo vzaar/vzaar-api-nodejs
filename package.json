@@ -1,11 +1,8 @@
 {
-  "name": "vzaar-api-nodejs",
+  "name": "vzaar",
   "version": "0.0.1",
   "description": "vzaar client for node.js",
   "main": "./lib/vzaar.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/vzaar/vzaar-api-nodejs.git"
@@ -23,6 +20,15 @@
   "homepage": "https://github.com/vzaar/vzaar-api-nodejs",
 
   "dependencies": {
-    "oauth": "0.9.11"
+    "oauth": "0.9.11",
+    "form-data": "0.2"
+  },
+
+  "devDependencies": {
+    "mocha": "*"
+  },
+
+  "engines": {
+    "node": "*"
   }
 }
