@@ -3,27 +3,28 @@ var assert = require("assert"),
     Vzaar = require("../lib/vzaar");
 
 
-describe("WhoAmI", function(){
+describe("UserDetails", function(){
   describe("Authorised", function(){
     this.timeout(10000);
 
-    var login = helper.getConf("login"),
-        token = helper.getConf("token"),
-        api = new Vzaar.Api({ login: login, token: token });
-    
+      var login = helper.getConf("login"),
+          token = helper.getConf("token"),
+          api = new Vzaar.Api({ login: login, token: token });
+          
     
     it("returns user name", function(done){
-      api.whoAmI(function(statusCode, data){        
-        assert.equal(data.vzaar_api.test.login, login);
+      api.userDetails(login, function(statusCode, data){
+        assert.equal(data.author_name, login);
         done();
       });
     });
 
     it("returns 200", function(done){
-      api.whoAmI(function(statusCode, data){        
+      api.userDetails(login, function(statusCode, data){
         assert.equal(statusCode, 200);
         done();
       });
     });
+      
   });
 });
