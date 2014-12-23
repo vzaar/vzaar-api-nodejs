@@ -1,16 +1,17 @@
 var assert = require("assert"),
-    Vzaar = require("../lib/vzaar"),
-    apiEnvs = require("../api_envs");
+    helper = require("./helper"),
+    Vzaar = require("../lib/vzaar");
 
 
 describe("AccountType", function(){
   this.timeout(10000);
+
+  var login = helper.getConf("login"),
+      token = helper.getConf("token"),
+      accountId = 34;
   
   it("returns account type", function(done){
-    var api = new Vzaar.Api({ login: apiEnvs.qa.login,
-                              token: apiEnvs.qa.token }),
-
-        accountId = 34;
+    var api = new Vzaar.Api({login: login, token: token});
     
     api.accountType(accountId, function(statusCode, data){        
       assert.equal(data.account_id, accountId);
