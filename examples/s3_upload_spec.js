@@ -3,7 +3,7 @@ var assert = require("assert"),
     Vzaar = require("../lib/vzaar");
 
 
-describe("UploadToS3", function(){
+describe("s3Upload", function(){
   this.timeout(10000);
 
   var login = helper.getConf("login"),
@@ -13,7 +13,7 @@ describe("UploadToS3", function(){
   
   
   it("returns 201", function(done){
-    api.uploadToS3(path, function(statusCode, data){        
+    api.s3Upload(path, function(statusCode, data){        
       assert.equal(statusCode, 201);
       done();
     });
