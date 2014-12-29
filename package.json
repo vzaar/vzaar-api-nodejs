@@ -23,7 +23,8 @@
   "homepage": "https://github.com/vzaar/vzaar-api-nodejs",
 
   "dependencies": {
-    "oauth": "0.9.11"
+    "oauth": "0.9.11",
+    "form-data": "0.2"
   },
 
   "devDependencies": {
