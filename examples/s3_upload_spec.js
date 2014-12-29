@@ -13,7 +13,7 @@ describe("s3Upload", function(){
   
   
   it("returns 201", function(done){
-    api.s3Upload(path, function(statusCode, data){        
+    api.s3Upload(path, function(statusCode, data){
       assert.equal(statusCode, 201);
       done();
     });
