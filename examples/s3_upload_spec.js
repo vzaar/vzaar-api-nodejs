@@ -4,11 +4,11 @@ var assert = require("assert"),
 
 
 describe("s3Upload", function(){
-  this.timeout(10000);
+  this.timeout(30000);
 
   var login = helper.getConf("login"),
       token = helper.getConf("token"),
-      path = "./video.mp4",
+      path = "./examples/video.mp4",
       api = new Vzaar.Api({ login: login, token: token });
   
   
