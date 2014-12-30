@@ -1,9 +1,9 @@
 var assert = require("assert"),
     helper = require("./helper");
 
-describe("ProcessVideo", function(){
+describe("ProcessAndDeleteVideo", function(){
   describe("Authorised", function(){
-    this.timeout(30000);
+    this.timeout(35000);
     var api = helper.init(),
         path = "./examples/video.mp4";
        
@@ -11,7 +11,11 @@ describe("ProcessVideo", function(){
       api.s3Upload(path, function(statusCode, data){
         api.processVideo(function(statusCode, _data){
           assert.equal(statusCode, 200);
-          done();
+          
+          api.deleteVideo(_data.id, function(statusCode, data){
+            assert.equal(statusCode, 200);
+            done();
+          });
         }, { guid: data.guid, profile: 3, title: "nodejs-test" });
       });
     });
