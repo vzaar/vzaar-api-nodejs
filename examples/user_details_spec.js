@@ -1,16 +1,11 @@
 var assert = require("assert"),
-    helper = require("./helper"),
-    Vzaar = require("../lib/vzaar");
-
+    helper = require("./helper");
 
 describe("UserDetails", function(){
   describe("Authorised", function(){
     this.timeout(10000);
-
-      var login = helper.getConf("login"),
-          token = helper.getConf("token"),
-          api = new Vzaar.Api({ login: login, token: token });
-          
+    var api = helper.init(),
+        login = helper.getConf('login');
     
     it("returns user name", function(done){
       api.userDetails(login, function(statusCode, data){

@@ -1,16 +1,12 @@
 var assert = require("assert"),
-    helper = require("./helper"),
-    Vzaar = require("../lib/vzaar");
+    helper = require("./helper");
 
 
 describe("Signature", function(){
   describe("Authorised", function(){
     this.timeout(10000);
 
-    var login = helper.getConf("login"),
-        token = helper.getConf("token"),
-        api = new Vzaar.Api({ login: login, token: token });
-    
+    var api = helper.init();    
     
     it("returns signature", function(done){
       api.signature(function(statusCode, data){

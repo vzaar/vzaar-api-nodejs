@@ -1,14 +1,11 @@
 var assert = require("assert"),
-    helper = require("./helper"),
-    Vzaar = require("../lib/vzaar");
-
+    helper = require("./helper");
 
 describe("AccountType", function(){
   this.timeout(10000);
 
-  var login = helper.getConf("login"),
-      token = helper.getConf("token"),
-      api = new Vzaar.Api({login: login, token: token}),
+  var api = helper.init(),
+      videoId = helper.getConf("videoId"),
       accountId = 34;
   
   it("returns account type", function(done){
