@@ -8,7 +8,7 @@ describe("WhoAmI", function(){
     
     it("returns user name", function(done){
       api.whoAmI(function(statusCode, data){        
-        assert.equal(data.vzaar_api.test.login, login);
+        assert.equal(data.vzaar_api.test.login, helper.getConf('login'));
         done();
       });
     });
