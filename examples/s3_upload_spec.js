@@ -1,16 +1,10 @@
 var assert = require("assert"),
-    helper = require("./helper"),
-    Vzaar = require("../lib/vzaar");
-
+    helper = require("./helper");
 
 describe("s3Upload", function(){
   this.timeout(30000);
-
-  var login = helper.getConf("login"),
-      token = helper.getConf("token"),
-      path = "./examples/video.mp4",
-      api = new Vzaar.Api({ login: login, token: token });
-  
+  var api = helper.init(),
+      path = "./examples/video.mp4";
   
   it("returns 201", function(done){
     api.s3Upload(path, function(statusCode, data){
