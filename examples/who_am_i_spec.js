@@ -23,7 +23,7 @@ describe("WhoAmI", function(){
 
   describe("when host can't be resolved", function(){
     var api = helper.init({hostname: "vzexample.localhost"});
-    it("returns user name", function(done){
+    it("returns error", function(done){
       api.whoAmI(function(statusCode, data){
         assert.equal(statusCode, undefined);
         assert.equal(data, 'Error: getaddrinfo ENOTFOUND');
