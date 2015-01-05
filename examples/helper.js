@@ -7,11 +7,15 @@ module.exports = {
     return conf[env][name];
   },
 
-  init: function(){
-    var api = new Vzaar.Api({ login: this.getConf("login"),
-                              token: this.getConf("token"),
-                              hostname: this.getConf("hostname"),
-                              forceHttp: this.getConf("forceHttp") });
+  init: function(_params){
+    var params = _params || {},
+        api = new Vzaar.Api({
+          login: params.login || this.getConf("login"),
+          token: params.token || this.getConf("token"),
+          hostname: params.hostname || this.getConf("hostname"),
+          forceHttp: params.forceHttp || this.getConf("forceHttp")
+        });
+    
     return api;
   }
 }

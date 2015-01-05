@@ -11,8 +11,17 @@ describe("VideoList", function(){
     
     it("returns videos", function(done){
       api.videoList(login, function(statusCode, data){
-        assert.ok(Core.isArray(data), true);
+        assert.equal(data.length, 3);
         done();
+      }, { count: 3 });
+    });
+
+    describe("labels", function(){
+      it("returns videos", function(done){
+        api.videoList(login, function(statusCode, data){
+          assert.equal(data.length, 1);
+          done();
+        }, { count: 3, labels: "api,api2" });
       });
     });
 
