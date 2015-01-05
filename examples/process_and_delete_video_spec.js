@@ -8,16 +8,15 @@ describe("ProcessAndDeleteVideo", function(){
         path = "./examples/video.mp4";
        
     it("returns 200", function(done){
-      api.s3Upload(path, function(statusCode, data){
-        api.processVideo(function(statusCode, _data){
+      api.uploadAndProcessVideo(path, function(statusCode, data){
+        assert.equal(statusCode, 200);
+
+        // clean up
+        api.deleteVideo(_data.id, function(statusCode, __data){
           assert.equal(statusCode, 200);
-          
-          api.deleteVideo(_data.id, function(statusCode, data){
-            assert.equal(statusCode, 200);
-            done();
-          });
-        }, { guid: data.guid, profile: 3, title: "nodejs-test" });
-      });
+          done();
+        });
+      }, { profile: 3, title: "nodejs-test" });
     });
   });
 });
