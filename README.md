@@ -30,12 +30,15 @@ api.whoAmI(function(statusCode, data) {
 
 ### Endpoints:
 
+Note: api#videoDetails and api#videoList don't require authentication when API public feed option is enabled for given account.
+api#userDetails and api#accountType are public.
+
 #### Fetching account's type details:
 ```javascript
 api.accountType(accountTypeId, callback);
 ```
 
-Fetching user's details:
+##### Fetching user's details:
 ```javascript
 api.userDetails(username, callback);
 ```
