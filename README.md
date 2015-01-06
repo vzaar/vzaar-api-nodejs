@@ -8,8 +8,6 @@ A node.js client for the vzaar API.
 
 ### Installation
 
-Add this line to your application's Gemfile:
-
     npm install 'vzaar'
 
 
