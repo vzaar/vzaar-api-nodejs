@@ -104,7 +104,7 @@ api.generateThumbnail(function(statusCode, data) {
 
 ##### Adding subtitle to the video (authentication required):
 ```javascript
-api.addSubtitle(callback, data)
+api.addSubtitle(callback, data);
 ```
 
 Example:
