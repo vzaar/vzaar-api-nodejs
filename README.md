@@ -76,6 +76,50 @@ Not supported yet
 api.s3Upload(pathToFile, callback);
 ```
 
+##### Processing video:
+
+```javascript
+api.processVideo(callback, data);
+```
+
+Example:
+
+```javascript
+api.processVideo(function(statusCode, data) {
+  // callback body
+}, { guid:, "GUID", title: "my video", profile: 3 });
+```
+
+##### Uploading and processing video (this is a combination of api#s3Upload and api#processVideo methods):
+
+```javascript
+api.uploadAndProcessVideo(path, callback, data);
+```
+
+Example:
+
+```javascript
+api.uploadAndProcessVideo("./path/to/my/video.mp4", function(statusCode, data) {
+  // callback body
+}, { title: "my video", profile: 3 });
+```
+
+##### Link Upload
+
+```javascript
+api.linkUpload(callback, data);
+```
+
+Example:
+
+```javascript
+api.linkUpload(function(statusCode, data) {
+  // callback body
+}, { encoding_params: { size_id: 3, title: "my title" },
+     url: "http://samples.mplayerhq.hu/MPEG-4/turn-on-off.mp4" });
+```
+
+
 ##### Uploading new thumbnail for video:
 ```javascript
 api.uploadThumbnail(videoId, callback, data);
@@ -86,7 +130,7 @@ Example:
 ```javascript
 api.uploadThumbnail(12345, function(statusCode, data) {
   // callback body
-}, { path:, "./path/to/my/video.mp4" });
+}, { path:, "./path/to/pic.jpg" });
 ```
 
 ##### Generating new thumbnail based on given time value:
