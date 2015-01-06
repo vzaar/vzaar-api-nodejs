@@ -1,5 +1,5 @@
 {
-  "name": "vzaar-api-nodejs",
+  "name": "vzaar",
   "version": "0.0.1",
   "description": "vzaar client for node.js",
   "main": "./lib/vzaar.js",
