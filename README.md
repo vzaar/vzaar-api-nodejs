@@ -17,6 +17,7 @@ Add this line to your application's Gemfile:
 
 ```javascript
 
+var Vzaar = require("vzaar");
 var api = new Vzaar.Api({token: "API token", login: "vzaar login"});
 ```
 
