@@ -30,7 +30,7 @@ api.whoAmI(function(statusCode, data) {
 
 ### Endpoints:
 
-Fetching account's type details:
+#### Fetching account's type details:
 ```javascript
 api.accountType(accountTypeId, callback);
 ```
