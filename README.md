@@ -90,7 +90,7 @@ api.processVideo(function(statusCode, data) {
 }, { guid:, "GUID", title: "my video", profile: 3 });
 ```
 
-##### Uploading and processing video (this is a combination of api#s3Upload and api#processVideo methods):
+##### Upload and process video:
 
 ```javascript
 api.uploadAndProcessVideo(path, callback, data);
@@ -104,7 +104,7 @@ api.uploadAndProcessVideo("./path/to/my/video.mp4", function(statusCode, data) {
 }, { title: "my video", profile: 3 });
 ```
 
-##### Link Upload
+##### Link Upload:
 
 ```javascript
 api.linkUpload(callback, data);
