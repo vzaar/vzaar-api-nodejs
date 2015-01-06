@@ -32,83 +32,62 @@ api.whoAmI(function(statusCode, data) {
 
 Fetching account's type details:
 ```javascript
-api.account_type(account_type_id, options)
+api.accountType(accountTypeId, callback);
 ```
 
 Fetching user's details:
 ```javascript
-api.user_details("user login", options)
+api.userDetails(username, callback);
 ```
 
-Getting details from public video:
+Getting details from video:
 ```javascript
-api.video_details(video_id, options)
+api.videoDetails(videoId, callback, params);
 ```
 
-Getting details from private video (authentication required):
+
+Fetching videos:
 ```javascript
-api.video_details(video_id, authenticated: true)
+api.videoList(login, callback, params);
 ```
 
-Fetching videos for a given user:
+Deleting video from vzaar:
 ```javascript
-api.video_details("user login", options)
+api.deleteVideo(videoId, callback);
 ```
 
-Fetching videos for authenticated user (authentication required):
+Updating existing video:
+
+Not supported yet
+
+Uploading new video to s3 (video object will not be created on vzaar):
 ```javascript
-api.videos
+api.s3Upload(pathToFile, callback);
 ```
 
-Removing video from vzaar: (authentication required)
+Uploading new thumbnail for video:
 ```javascript
-api.delete_video(video_id)
+api.uploadThumbnail(videoId, callback, data);
 ```
 
-Updating existing video (authentication required):
+Generating new thumbnail based on given time value:
 ```javascript
-api.edit_video(video_id, options)
-
-# options are: title, description, private and seo_url
-```
-
-Uploading new video to vzaar (authentication required):
-```javascript
-api.upload_video(options)
-
-# options are: path, url, title, description, profile, transcoding, replace_id,
-# width and bitrate
-#
-# api.upload_video(path: "./path/to/video.mp4", title: "my video")
-#
-# For link upload use url param:
-# api.upload_video(url: "http://example.com/video.mp4", title: "my video")
-```
-
-Uploading new thumbnail for video (authentication required):
-```javascript
-api.upload_thumbnail(video_id, options)
-
-# api.upload_thumbnail(123456, path: "/path/to/image.jpg")
-```
-
-Generating new thumbnail based on given time value (authentication required):
-```javascript
-api.generate_thumbnail(video_id, options)
+api.generateThumbnail(videoId, callback, data);
 
 # api.generate_thumbnail(123456, time: 3)
 ```
 
 Adding subtitle to the video (authentication required):
 ```javascript
-api.add_subtitle(video_id, options)
+api.addSubtitle(callback, data)
 
-# api.add_subtitle(123456, body: "1\n00:00:17,440 --> 00:01:20,375\n ......", language: "en")
+# api.addSubtitle(function(statusCode, data) {
+  }, { body: "1\n00:00:17,440 --> 00:01:20,375\n ......", language: "en" });
 ```
 
-Getting guid and aws signature (authentication required):
+Getting guid and aws signature:
 ```ruby
-api.signature
+api.signature(callback, params);
 ```
 
 
