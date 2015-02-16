@@ -60,6 +60,20 @@ api.videoList("username", function(statusCode, data) {
 }, { count:, 5, labels: "foo, bar" });
 ```
 
+##### Editing existing video:
+```javascript
+api.editVideo(videoId, callback, data);
+```
+
+Example:
+
+```javascript
+api.editVideo(123, function(statusCode, data) {
+  // callback body
+}, { title:, "my video" });
+```
+
+
 ##### Deleting video from vzaar:
 ```javascript
 api.deleteVideo(videoId, callback);
