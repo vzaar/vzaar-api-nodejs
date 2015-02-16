@@ -1,6 +1,6 @@
 {
   "name": "vzaar",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "vzaar client for node.js",
   "main": "./lib/vzaar.js",
   "repository": {

@@ -15,7 +15,18 @@ module.exports = {
           hostname: params.hostname || this.getConf("hostname"),
           forceHttp: params.forceHttp || this.getConf("forceHttp")
         });
-    
+
     return api;
+  },
+
+  randStr: function(len){
+    var text = "",
+        possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < len; i++ ) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    return text;
   }
 }
